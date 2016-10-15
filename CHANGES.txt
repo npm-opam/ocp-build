@@ -1,0 +1,38 @@
+Change log
+==========
+
+2016-05-12:
+* Fix ocp-pp issue with ocamldoc comments in 4.03
+
+2016-05-11:
+* ./configure:
+  * Remove variable 'ocplibdir'. Typerex libraries will be installed in
+     ${ocamldir} without the typerex/ prefix.
+  * Use ${OPAM_PREFIX} instead of ${OCPBUILD_METADIR} to modify both
+     ./configure and ocp-build install rules for OPAM.
+* [ocp-build uninstall]:
+  * Use OPAM_PREFIX or OCAMLLIB when no -install-lib is specified
+  * Accept -query, -query-version, -query-dir requests
+  * Accept -list to list packages that could be uninstalled
+
+2016-05-11: Version 1.99.15-beta
+* Better ./configure following GNU conventions
+  * New configure options:
+    --with-ocamldir=DIRNAME root storage of the OCaml distribution
+    --with-ocplibdir=DIRNAME store Typerex files in DIRNAME
+    --with-metadir=DIRNAME  store meta files in DIRNAME
+  * Detect ${OCPBUILD_METADIR} to set metadir, or
+  * Detect ocamlfind configuration to set metadir
+* New install option '-install-meta DIRNAME'
+* Follow environement variable ${OCPBUILD_METADIR}
+
+2016-03-15: Version 1.99.14-beta
+* Change Log started (late is better than never !)
+* Improved Compatibility with 4.03
+* Try to build as many project as possible instead of failing as soon as
+   a project is not complete.
+* Fix #8: do not create env variables for every package found.
+* ocplib-system: fix missing close_in in File
+* Reuse names of temp directories created for each rule: should help
+   ocp-watcher clean-up files that have been rebuilt.
+   

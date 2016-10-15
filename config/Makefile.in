@@ -1,0 +1,16 @@
+CONFIGURE_ARGS=@CONFIGURE_ARGS@
+
+DATADIR=@datarootdir@
+BINDIR=@bindir@
+LIBDIR=@libdir@
+MANDIR=@mandir@
+TYPEREXDIR=@datadir@
+VERSION=@PACKAGE_VERSION@
+
+OCAMLC=ocamlc.opt
+OCAMLOPT=ocamlopt.opt
+OCAMLDEP=ocamldep.opt
+OCAMLLEX=ocamllex.opt
+OCAMLYACC=ocamlyacc
+CAMLP4O=camlp4o.opt
+

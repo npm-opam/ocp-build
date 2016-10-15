@@ -1,0 +1,8 @@
+CONFIGURE_ARGS=@CONFIGURE_ARGS@
+
+DATADIR=@datarootdir@
+BINDIR=@bindir@
+LIBDIR=@libdir@
+MANDIR=@mandir@
+TYPEREXDIR=@datadir@
+VERSION=@PACKAGE_VERSION@

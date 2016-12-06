@@ -6,15 +6,21 @@
             "globalCollisionBehavior": "clobber",
             "val": "true"
         },
+        "ocp_build_version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "1.99.17"
+        },
+        "CAML_LD_LIBRARY_PATH": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/lib/stublibs"
+        },
         "ocp_build_enable": {
             "global": true,
             "globalCollisionBehavior": "clobber",
             "val": "enable"
-        },
-        "ocp_build_version": {
-            "global": true,
-            "globalCollisionBehavior": "clobber",
-            "val": "1.99.8"
         },
         "FINDLIB": {
             "global": true,
@@ -25,7 +31,7 @@
         "version": {
             "global": true,
             "globalCollisionBehavior": "clobber",
-            "val": "1.99.8"
+            "val": "1.99.17"
         },
         "PATH": {
             "global": true,
@@ -34,19 +40,19 @@
             "val": "./_build/ocamlfind/bin"
         }
     },
-    "version": "1.99.8",
+    "version": "1.99.17",
     "dependencies": {
         "@opam-alpha/camlp4": "*",
-        "@opam-alpha/ocamlfind": "*",
+        "@opam-alpha/typerex-build": "= 1.99.17",
         "dependency-env": "https://github.com/npm-ml/dependency-env.git",
         "substs": "https://github.com/yunxing/substs.git",
         "nopam": "https://github.com/yunxing/nopam.git",
         "opam-installer-bin": "https://github.com/yunxing/opam-installer-bin.git"
     },
     "scripts": {
-        "postinstall": "eval $(dependencyEnv) && nopam && ./configure --prefix $opam_prefix && make && make install && (opam-installer --prefix=$opam_prefix || true)"
+        "postinstall": "eval $(dependencyEnv) && nopam && (opam-installer --prefix=$opam_prefix || true)"
     },
     "peerDependencies": {
-        "@opam-alpha/ocaml": "< 4.02.3"
+        "@opam-alpha/ocaml": ">= 3.12.0"
     }
 }
